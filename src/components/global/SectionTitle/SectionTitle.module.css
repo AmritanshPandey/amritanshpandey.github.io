@@ -3,7 +3,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 24px 200px;
+    padding: 56px 200px 32px;
     font-size: var(--font-size-xxxxl);
     font-weight: var(--fw-bold);
 }
@@ -20,11 +20,16 @@
 
 /* Responsive Layout */
 
-/*iPhone SE, Mini, Older non-plus*/
-@media (max-width: 374px) {
+
+/* =================================================
+   RESPONSIVE
+================================================= */
+
+@media (max-width: 480px) {
+
     .sectionTitleContainer {
-        padding: 24px;
-        font-size: var(--font-size-xxl);
+        padding: 24px 24px 16px;
+        font-size: var(--font-size-xl);
     }
 
     .sectionTitleButton {
@@ -32,49 +37,8 @@
     }
 }
 
-/*iPhone Pro*/
-@media (min-width: 375px) and (max-width: 413px) {
-    .sectionTitleContainer {
-        padding: 24px;
-        font-size: var(--font-size-xxl);
-    }
+@media (min-width: 768px) and (max-width: 1366px) {
 
-    .sectionTitleButton {
-        display: none;
-    }
-}
-
-/*iPhone Max*/
-@media (min-width: 414px) and (max-width: 480px) {
-    .sectionTitleContainer {
-        padding: 24px;
-        font-size: var(--font-size-xxl);
-    }
-
-    .sectionTitleButton {
-        display: none;
-    }
-}
-
-/*iPad Mini/9th/10th gen*/
-@media (min-width: 768px) and (max-width: 1024px) {
-    .sectionTitleContainer {
-        padding: 24px 72px;
-        font-size: var(--font-size-xxl);
-    }
-}
-
-/*iPad Pro/ Air 11”*/
-@media (min-width: 834px) and (max-width: 1194px) {
-    .sectionTitleContainer {
-        padding: 24px 72px;
-        font-size: var(--font-size-xxxl);
-    }
-}
-
-
-/*iPad Pro/ Air 12.9”*/
-@media (min-width: 1024px) and (max-width: 1366px) {
     .sectionTitleContainer {
         padding: 24px 72px;
         font-size: var(--font-size-xxxl);

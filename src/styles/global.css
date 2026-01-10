@@ -1,3 +1,8 @@
+@import "tailwindcss";
+
+
+
+
 *,
 *::before,
 *::after {
@@ -206,6 +211,53 @@ Spacing & Radius
 }
 
 
+.surface {
+    background-color: var(--surface);
+}
+
+.surface-secondary {
+    background-color: var(--surface-light);
+}
+
+.surface-grey {
+    background-color: var(--surface-grey);
+}
+
+.surface-black {
+    background-color: var(--surface-black);
+}
+
+.surface-dark {
+    background-color: var(--surface-dark);
+}
+
+.text-white {
+    color: var(--inverted-text);
+}
+
+.text-black {
+    color: var(--primary-text);
+}
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+.text-primary-accent {
+    color: var(--primary-accent-color);
+}
+
+.text-secondary {
+    color: var(--secondary-text);
+}
+
+.text-tertiary {
+    color: var(--tertiary-text);
+}
+
+.text-ligh-grey {
+    color: var(--light-grey-text);
+}
 
 
 /* Responsive Typography and Layout */
@@ -249,11 +301,11 @@ Spacing & Radius
         --padding-xxxxl: 128px;
         --padding-page: 56px 200px;
 
-        
+
 
     }
 
-    
+
 
 
 }

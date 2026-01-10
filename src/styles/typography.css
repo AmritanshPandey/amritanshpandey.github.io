@@ -139,9 +139,7 @@
 
 
 /* Responsive Typography */
-
-/*iPhone SE, Mini, Older non-plus*/
-@media (max-width: 374px) {
+@media (max-width: 480px) {
     .display {
         font-size: var(--font-size-xxxxl);
     }
@@ -150,36 +148,19 @@
         font-size: var(--font-size-md);
     }
 
-    .h3 {
-        font-size: var(--font-size-base);
-    }
-
+    .h3,
     .subheading {
         font-size: var(--font-size-base);
     }
-}
 
-/*iPhone Pro*/
-@media (min-width: 375px) and (max-width: 413px) {
-    .display {
-        font-size: var(--font-size-sxl);
-    }
-
-    .eyebrow-heading {
-        font-size: var(--font-size-md);
-    }
-
-    .h3 {
-        font-size: var(--font-size-base);
-    }
-
-    .subheading {
-        font-size: var(--font-size-base);
+    .h2 {
+        font-weight: var(--fw-medium);
+        line-height: var(--lh-normal);
+        font-size: var(--font-size-lg);
     }
 }
 
-/*iPhone Max*/
-@media (min-width: 414px) and (max-width: 480px) {
+@media (max-width: 1024px) {
     .display {
         font-size: var(--font-size-sxxl);
     }
@@ -188,69 +169,15 @@
         font-size: var(--font-size-md);
     }
 
-    .h3 {
-        font-size: var(--font-size-md);
-    }
-
+    .h3,
     .subheading {
         font-size: var(--font-size-md);
     }
-}
-
-/*iPad Mini/9th/10th gen*/
-@media (min-width: 768px) and (max-width: 1024px) {
-    .display {
-        font-size: var(--font-size-sxxl);
-    }
-
-    .eyebrow-heading {
-        font-size: var(--font-size-md);
-    }
-
-    .h3 {
-        font-size: var(--font-size-md);
-    }
-
-    .subheading {
-        font-size: var(--font-size-md);
-    }
-}
-
-/*iPad Pro/ Air 11”*/
-@media (min-width: 834px) and (max-width: 1194px) {
-    .display {
-        font-size: var(--font-size-sxxl);
-    }
-
-    .eyebrow-heading {
-        font-size: var(--font-size-md);
-    }
-
-    .h3 {
-        font-size: var(--font-size-md);
-    }
-
-    .subheading {
-        font-size: var(--font-size-md);
-    }
-}
 
 
-/*iPad Pro/ Air 12.9”*/
-@media (min-width: 1024px) and (max-width: 1366px) {
-    .display {
-        font-size: var(--font-size-sxxxl);
-    }
-
-    .eyebrow-heading {
-        font-size: var(--font-size-md);
-    }
-
-        .h3 {
-        font-size: var(--font-size-md);
-    }
-
-    .subheading {
-        font-size: var(--font-size-md);
+    .h2 {
+        font-weight: var(--fw-medium);
+        line-height: var(--lh-normal);
+        font-size: var(--font-size-lg);
     }
 }

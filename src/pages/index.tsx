@@ -13,9 +13,7 @@ export default function HomePage() {
       <Hero />
       <FeaturedWork />
       <AI />
-      <WorkHighlights />
-      <Renders />
-      <Articles />
+ 
 
     </div>
   );

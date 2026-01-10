@@ -1,162 +1,270 @@
+/* =================================================
+   HERO CONTAINER
+================================================= */
+
 .heroContainer {
     position: relative;
     overflow: hidden;
     display: flex;
-    padding: 160px 200px 120px;
+    gap: var(--gap-24);
     justify-content: space-between;
-    background:
-        /* vertical ribs */
-        repeating-linear-gradient(90deg,
-            rgba(110, 110, 110, 0.067) 0 1.4px,
-            rgba(255, 255, 255, 0) 1.4px 32px),
-        /* highlight arc */
-        radial-gradient(900px 420px at 15% 35%, rgba(255, 150, 32, 0.55), transparent 45%),
-        radial-gradient(1000px 500px at 60% 20%, rgba(255, 230, 180, 0.55), transparent 45%),
-        /* main gradient */
-        linear-gradient(45deg,
-            #f26a00 0%,
-            #f6c864 25%,
-            #ffffff 45%,
-            #9fd8ff 75%,
-            #0c2b75 100%);
-    background-blend-mode: normal;
+    padding: 160px 200px;
+    color: var(--primary-text);
+
+    /* Base gradient */
+    background: linear-gradient(225deg,
+            #ff7426 0%, #ff7426 3.125%,
+            #ff7c26 calc(3.125% + 1px), #ff7c26 6.25%,
+            #ff8627 calc(6.25% + 1px), #ff8627 9.375%,
+            #ff902b calc(9.375% + 1px), #ff902b 12.5%,
+            #ff9a30 calc(12.5% + 1px), #ff9a30 15.625%,
+            #ffa436 calc(15.625% + 1px), #ffa436 18.75%,
+            #ffaf3f calc(18.75% + 1px), #ffaf3f 21.875%,
+            #ffb948 calc(21.875% + 1px), #ffb948 25%,
+            #ffc353 calc(25% + 1px), #ffc353 28.125%,
+            #ffcd5f calc(28.125% + 1px), #ffcd5f 31.25%,
+            #ffd76c calc(31.25% + 1px), #ffd76c 34.375%,
+            #ffe07b calc(34.375% + 1px), #ffe07b 37.5%,
+            #ffe88a calc(37.5% + 1px), #ffe88a 40.625%,
+            #fff099 calc(40.625% + 1px), #fff099 43.75%,
+            #fff7a9 calc(43.75% + 1px), #fff7a9 46.875%,
+            #fffcb9 calc(46.875% + 1px), #fffcb9 50%,
+            #ffffca calc(50% + 1px), #ffffca 53.125%,
+            #ffffda calc(53.125% + 1px), #ffffda 56.25%,
+            #ffffea calc(56.25% + 1px), #ffffea 59.375%,
+            #fbfffa calc(59.375% + 1px), #fbfffa 62.5%,
+            #f6ffff calc(62.5% + 1px), #f6ffff 65.625%,
+            #f0ffff calc(65.625% + 1px), #f0ffff 68.75%,
+            #eaffff calc(68.75% + 1px), #eaffff 71.875%,
+            #e3ffff calc(71.875% + 1px), #e3ffff 75%,
+            #dcffff calc(75% + 1px), #dcffff 78.125%,
+            #d5fdff calc(78.125% + 1px), #d5fdff 81.25%,
+            #cdf7ff calc(81.25% + 1px), #cdf7ff 84.375%,
+            #c5f1ff calc(84.375% + 1px), #c5f1ff 87.5%,
+            #bde9ff calc(87.5% + 1px), #bde9ff 90.625%,
+            #b5e1ff calc(90.625% + 1px), #b5e1ff 93.75%,
+            #acd8ff calc(93.75% + 1px), #acd8ff 96.875%,
+            #a3cfff calc(96.875% + 1px) 100%);
+
+    /* Light settle */
+    background-size: 140% 140%;
+    background-position: 10% 50%;
+    animation: gradientSettle 1.2s ease-out forwards;
 }
+
+/* =================================================
+   GRADIENT SETTLE
+================================================= */
+
+@keyframes gradientSettle {
+    to {
+        background-position: 55% 50%;
+    }
+}
+
+/* =================================================
+   NOISE LAYER (organic, continuous)
+================================================= */
 
 .heroContainer::before {
     content: "";
     position: absolute;
-    inset: 0;
+    inset: -20%;
     background: var(--surface-black);
     filter: url(#noiseFilter);
-    opacity: 1;
+    opacity: 0.12;
     mix-blend-mode: overlay;
     pointer-events: none;
+    z-index: 1;
+    animation: noiseDrift 6s steps(4) infinite;
 }
 
+@keyframes noiseDrift {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(-2%, 1%);
+    }
+
+    50% {
+        transform: translate(1%, -2%);
+    }
+
+    75% {
+        transform: translate(-1%, -1%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* =================================================
+   SHINE (SUBTLE, SETTLES, STAYS)
+================================================= */
+
+.heroContainer::after {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    pointer-events: none;
+
+    background: linear-gradient(225deg,
+            transparent 42%,
+            rgba(255, 255, 255, 0.28) 50%,
+            transparent 58%);
+
+    opacity: 0;
+    mix-blend-mode: overlay;
+    z-index: 2;
+}
+
+/* Triggered once via JS */
+.animateShine::after {
+    animation: shineFadeIn 1.6s ease-out forwards;
+}
+
+@keyframes shineFadeIn {
+    to {
+        opacity: 0.35;
+    }
+}
+
+/* =================================================
+   CONTENT
+================================================= */
+
+.heroTitle,
+.heroContent {
+    position: relative;
+    z-index: 3;
+}
 
 .heroContent {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-16);
-    color: var(--black-text);
-    width: 100%;
+    gap: var(--gap-24);
+    width: 73%;
 }
 
 .heroTitle {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-32);
+    gap: var(--gap-8);
+}
 
+.heroTitleText {
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    font-size: var(--font-size-sxxxxl);
 }
 
 .heroSubtitle {
-    width: 100%;
+    font-size: var(--font-size-xl);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-normal);
 }
-
 
 .heroDescription {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-16);
-    width: 90%;
-    font-size: var(--font-size-md);
-    font-weight: var(--fw-base);
-    line-height: var(--lh-normal);
+    gap: var(--gap-24);
+
 }
 
-.heroMeta {
-    color: var(--primary-text);
-    font-size: var(--font-size-base);
-    font-weight: var(--fw-bold);
+.heroDescriptionText {
+    font-size: var(--font-size-lg);
     line-height: var(--lh-normal);
+    font-weight: var(--fw-medium);
+}
+
+/* =================================================
+   MOTION SAFETY
+================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .heroContainer {
+        animation: none;
+        background-position: 50% 50%;
+    }
+
+    .heroContainer::before,
+    .animateShine::after {
+        animation: none;
+    }
 }
 
 
-/* Responsive Styles */
+/* =================================================
+   FEATURED WORK
+================================================= */
+.featuredWorkSection {
+     padding: 0px 200px;
+}
 
-/* Responsive Typography and Layout */
+/* =================================================
+   RESPONSIVE
+================================================= */
 
-
-/*📱 Mobile (≤ 480px)*/
 @media (max-width: 480px) {
+
     .heroContainer {
-        position: relative;
         padding: 96px 24px;
-        background:
-            /* vertical ribs */
-            repeating-linear-gradient(90deg,
-                rgba(110, 110, 110, 0.067) 0 1.4px,
-                rgba(255, 255, 255, 0) 1.4px 32px),
-            /* highlight arc */
-            radial-gradient(900px 420px at 15% 35%, rgba(255, 150, 32, 0.55), transparent 45%),
-            radial-gradient(1000px 500px at 60% 20%, rgba(255, 230, 180, 0.134), transparent 45%),
-            /* main gradient */
-            linear-gradient(45deg,
-                #f26a00 0%,
-                #f6c864 25%,
-                #ffffff 45%,
-                #9fd8ff 75%,
-                #0c2b75 100%);
-        background-blend-mode: normal;
     }
 
-
-    .heroDescription {
-        display: flex;
-        flex-direction: column;
-        gap: var(--gap-16);
+    .heroContent {
         width: 100%;
-        font-size: var(--font-size-base);
-        font-weight: var(--fw-base);
-        line-height: var(--lh-normal);
+        gap: var(--gap-16);
     }
 
-    .heroMeta {
-        color: var(--primary-text);
-        font-size: var(--font-size-base);
-        font-weight: var(--fw-bold);
-        line-height: var(--lh-normal);
+    .heroSubtitle {
+        font-size: var(--font-size-lg);
     }
 
+    .heroTitleText {
+        font-size: var(--font-size-xxxl);
+        line-height: var(--lh-snug);
+    }
 
+    .heroDescriptionText {
+        font-size: var(--font-size-md);
+        line-height: var(--lh-normal);
+        font-weight: var(--fw-medium);
+    }
 
+    .featuredWorkSection {
+     padding: 0px 24px;
+}
 }
 
-
-/*📱 Large phones / small tablets (481px – 768px) */
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1366px) {
     .heroContainer {
-        position: relative;
-        padding: 96px 24px;
-        background:
-            /* vertical ribs */
-            repeating-linear-gradient(90deg,
-                rgba(110, 110, 110, 0.067) 0 1.4px,
-                rgba(255, 255, 255, 0) 1.4px 32px),
-            /* highlight arc */
-            radial-gradient(900px 420px at 15% 35%, rgba(255, 150, 32, 0.55), transparent 45%),
-            radial-gradient(1000px 500px at 60% 20%, rgba(255, 230, 180, 0.134), transparent 45%),
-            /* main gradient */
-            linear-gradient(45deg,
-                #f26a00 0%,
-                #f6c864 25%,
-                #ffffff 45%,
-                #9fd8ff 75%,
-                #0c2b75 100%);
-        background-blend-mode: normal;
-    }
-}
-
-/*📱 iPad / Tablets (768px – 1024px)*/
-@media (min-width: 768px) and (max-width: 1024px) {
-    .heroContainer {
-
-        padding: 128px 72px 56px;
+        padding: 128px 72px 96px;
     }
 
-        .heroDescription {
+    .heroContent {
+        width: 90%;
         gap: var(--gap-16);
-        width: 100%;
     }
 
+    .heroSubtitle {
+        font-size: var(--font-size-lg);
+    }
+
+    .heroTitleText {
+        font-size: var(--font-size-xxxl);
+        line-height: var(--lh-snug);
+    }
+
+    .heroDescriptionText {
+        font-size: var(--font-size-md);
+        line-height: var(--lh-normal);
+        font-weight: var(--fw-medium);
+    }
+
+    .featuredWorkSection {
+     padding: 0px 72px;
+}
 }

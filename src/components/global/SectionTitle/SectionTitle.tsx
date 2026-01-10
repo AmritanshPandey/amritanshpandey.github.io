@@ -1,6 +1,7 @@
 import React from "react";
 import { IconChevronRight } from '@tabler/icons-react';
 import styles from './SectionTitle.module.css'
+import Button from "../Buttons/Button";
 
 interface SectionTitleProps {
   title: string;
@@ -16,6 +17,7 @@ export default function SectionTitle({
   actionHref,
 }: SectionTitleProps) {
   return (
+
     <div className={styles.sectionTitleContainer}>
       <div>
         <span>{title}</span>
@@ -23,13 +25,18 @@ export default function SectionTitle({
       </div>
 
       {actionHref && (
-        <div className={styles.sectionTitleButton}>
-          <a href={actionHref} className="btn-text">
-            {actionLabel}
-          </a>
-          <IconChevronRight stroke={2} />
-        </div>
+
+        <Button
+          href={actionHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="tertiary"
+          iconRight={IconChevronRight}
+        >
+          {actionLabel}
+        </Button>
       )}
     </div>
+
   );
 }

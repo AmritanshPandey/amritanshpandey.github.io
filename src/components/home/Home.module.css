@@ -201,7 +201,193 @@
    FEATURED WORK
 ================================================= */
 .featuredWorkSection {
-     padding: 0px 200px;
+    padding: var(--padding-page);
+}
+
+
+/* =================================================
+   AI & WEB TOOLS
+================================================= */
+.aiWebTools {
+    padding: var(--padding-page);
+
+}
+
+.aiCardGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-48);
+}
+
+/* =================================================
+   WORK HIGHLIGHT
+================================================= */
+
+.workHighLight {
+    padding: var(--padding-page);
+}
+
+.workHighlightGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+
+
+/* =================================================
+HOW I WORK
+================================================= */
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+    padding: var(--padding-page);
+}
+
+/* LEFT */
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.heading {
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.description {
+    color: var(--secondary-text);
+}
+
+/* CENTER */
+.processCard {
+    background: var(--surface-black);
+    color: var(--inverted-text);
+    border-radius: 24px;
+    padding: 32px 32px 24px;
+}
+
+.processTitle {
+    font-size: var(--font-size-xl);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-snug);
+    padding: 8px 0 24px;
+}
+
+.steps {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-24);
+    padding: 0;
+}
+
+.steps li {
+    display: flex;
+    gap: var(--gap-16);
+    align-items: center;
+}
+
+.stepsNumber {
+    font-size: var(--font-size-xxxl);
+    font-weight: var(--fw-medium);
+    color: var(--tertiary-accent-color);
+    line-height: var(--lh-snug);
+}
+
+.stepsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-4);
+}
+
+.stepsHeading {
+    font-size: var(--font-size-lg);
+    font-weight: var(--fw-medium);
+    color: var(--inverted-text);
+    line-height: var(--lh-snug);
+}
+
+.stepsContent {
+    font-size: var(--font-size-sm);
+    font-weight: var(--fw-base);
+    color: var(--inverted-text);
+    line-height: var(--lh-normal);
+}
+
+/* RIGHT */
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.card {
+    background: var(--surface-dark);
+    border-radius: 24px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-8);
+    width: fit-content;
+}
+
+.card ul {
+    margin-top: 12px;
+    padding-left: 16px;
+}
+
+.card li {
+    margin-bottom: 8px;
+}
+
+/* LABEL */
+.label {
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    font-weight: var(--fw-medium);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+.cardHeading {
+    font-size: var(--font-size-lg);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-snug);
+}
+
+.cardListContainer {
+    display: flex;
+    gap: var(--gap-8);
+    flex-direction: column;
+    margin-top: 8px;
+}
+
+.cardList {
+    display: flex;
+    gap: var(--gap-8);
+    align-items: center;
+    font-size: var(--font-size-base);
+}
+
+.listDot {
+    height: 6px;
+    width: 6px;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius-round);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* =================================================
@@ -211,7 +397,7 @@
 @media (max-width: 480px) {
 
     .heroContainer {
-        padding: 96px 24px;
+        padding: 96px 24px 64px;
     }
 
     .heroContent {
@@ -235,7 +421,43 @@
     }
 
     .featuredWorkSection {
-     padding: 0px 24px;
+        padding: var(--padding-page);
+    }
+
+    .aiCardGrid {
+        grid-template-columns: 1fr;
+        gap: var(--gap-32);
+    }
+
+    .workHighlightGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .heading {
+        font-size: 28px;
+        line-height: 1.2;
+        font-weight: 700;
+    }
+
+    .processTitle {
+        font-size: var(--font-size-lg);
+        font-weight: var(--fw-semibold);
+        line-height: var(--lh-snug);
+        padding: 8px 0 24px;
+    }
+
+    .stepsHeading {
+        font-size: var(--font-size-md);
+        font-weight: var(--fw-medium);
+        color: var(--inverted-text);
+        line-height: var(--lh-snug);
+    }
+
+    .stepsNumber {
+    font-size: var(--font-size-xxxl);
+    font-weight: var(--fw-medium);
+    color: var(--tertiary-accent-color);
+    line-height: var(--lh-snug);
 }
 }
 
@@ -265,6 +487,34 @@
     }
 
     .featuredWorkSection {
-     padding: 0px 72px;
-}
+        padding: var(--padding-page);
+    }
+
+    .aiCardGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--gap-32);
+    }
+
+    .workHighlightGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .right {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+    }
+
+    .heading {
+        font-size: 40px;
+        line-height: 1.2;
+        font-weight: 700;
+    }
+
+    .processTitle {
+        font-size: var(--font-size-xl);
+        font-weight: var(--fw-semibold);
+        line-height: var(--lh-snug);
+        padding: 8px 0 24px;
+    }
 }

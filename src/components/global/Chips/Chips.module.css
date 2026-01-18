@@ -1,0 +1,25 @@
+/* =========================
+   CHIP
+========================= */
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 8px 16px;
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: var(--fw-medium);
+    line-height: 1;
+
+    background: var(--surface-dark);
+    color: var(--secondary-text);
+
+    white-space: nowrap;
+}
+
+.chip:hover {
+    background: var(--primary-color);
+    color: var(--inverted-text);
+}

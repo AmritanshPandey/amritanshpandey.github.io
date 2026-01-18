@@ -1,38 +1,52 @@
-import React from "react";
+import styles from "./ThreeDModels.module.css";
+import Link from "next/link";
+import { IconArrowUpRight } from "@tabler/icons-react";
 
-interface FullImageCardProps {
-  image: string;
-  type?: string;
-  title: string;
-  href?: string;
-}
+const MODELS = [
+  {
+    label: "3D CREATION",
+    title: "3D Render",
+    image: "/images/3d/blue-dark.jpg",
+    href: "/work/3d-render-1",
+  },
+  {
+    label: "3D CREATION",
+    title: "3D Render",
+    image: "/images/3d/blue-wave.jpg",
+    href: "/work/3d-render-2",
+  },
+  {
+    label: "3D CREATION",
+    title: "3D Render",
+    image: "/images/3d/warm-light.jpg",
+    href: "/work/3d-render-3",
+  },
+];
 
-function FullImageCard({ image, type, title, href }: FullImageCardProps) {
-  const Content = (
-    <div className="flex flex-col justify-between h-full">
-      <div className="flex flex-col gap-2">
-        {type && <span className="eyebrow">{type}</span>}
-        <span className="h3">{title}</span>
+export default function ThreeDModels() {
+  return (
+    <section className={styles.section}>
+      <h2 className={styles.heading}>3D Models</h2>
+
+      <div className={styles.grid}>
+        {MODELS.map((item, i) => (
+          <Link key={i} href={item.href} className={styles.card}>
+            <div
+              className={styles.media}
+              style={{ backgroundImage: `url(${item.image})` }}
+            />
+
+            <div className={styles.content}>
+              <span className={styles.label}>{item.label}</span>
+              <h3 className={styles.title}>{item.title}</h3>
+            </div>
+
+            <span className={styles.icon}>
+              <IconArrowUpRight size={18} stroke={2} />
+            </span>
+          </Link>
+        ))}
       </div>
-    </div>
-  );
-
-  return href ? (
-    <a
-      href={href}
-      className="full-image-card rounded-md cursor-pointer"
-      style={{ backgroundImage: `url(${image})` }}
-    >
-      {Content}
-    </a>
-  ) : (
-    <section
-      className="full-image-card rounded-md"
-      style={{ backgroundImage: `url(${image})` }}
-    >
-      {Content}
     </section>
   );
 }
-
-export default FullImageCard;

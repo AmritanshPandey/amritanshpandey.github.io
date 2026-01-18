@@ -1,0 +1,74 @@
+.card {
+  position: relative;
+  padding: 24px;
+  border-radius: 24px;
+  background: var(--surface-light);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-24);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  background: var(--surface-dark);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-8);
+}
+
+/* Icon */
+.icon {
+  color: var(--primary-text);
+}
+
+/* Title */
+.title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--fw-semibold);
+  color: var(--primary-text);
+}
+
+/* Description */
+.description {
+  font-size: var(--font-size-base);
+  color: var(--secondary-text);
+  line-height: var(--lh-normal);
+}
+
+/* CTA */
+.cta {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* CTA icon animation */
+.cta svg {
+  transition: transform 0.25s ease;
+}
+
+/* Rotate arrow when card is hovered */
+.card:hover .cta svg {
+  transform: rotate(-45deg);
+}
+
+.cta svg {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .cta svg {
+  transform: rotate(-45deg) translateX(2px);
+}
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}

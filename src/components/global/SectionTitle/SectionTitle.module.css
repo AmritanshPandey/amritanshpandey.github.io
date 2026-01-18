@@ -3,7 +3,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 56px 200px 32px;
+    padding: 56px 200px 24px;
     font-size: var(--font-size-xxxxl);
     font-weight: var(--fw-bold);
 }

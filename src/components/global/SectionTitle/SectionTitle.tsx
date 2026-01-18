@@ -23,20 +23,20 @@ export default function SectionTitle({
         <span>{title}</span>
         {subtitle && <p className="body">{subtitle}</p>}
       </div>
+      <div className={styles.sectionTitleButton}>
+        {actionHref && (
 
-      {actionHref && (
-
-        <Button
-          href={actionHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="tertiary"
-          iconRight={IconChevronRight}
-        >
-          {actionLabel}
-        </Button>
-      )}
+          <Button
+            href={actionHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="tertiary"
+            iconRight={IconChevronRight}
+          >
+            {actionLabel}
+          </Button>
+        )}
+      </div>
     </div>
-
   );
 }

@@ -1,5 +1,20 @@
 import Link from "next/link";
-import { IconDevices, IconChevronDown, IconDeviceImac, IconSparkles, IconDeviceMobileCode, IconCategory2, IconCode, IconTableHeart, IconBrandSupernova, IconIcons, IconCube } from '@tabler/icons-react';
+import {
+  IconDevices,
+  IconChevronDown,
+  IconDeviceImac,
+  IconSparkles,
+  IconDeviceMobileCode,
+  IconCategory2,
+  IconCode,
+  IconTableHeart,
+  IconTool,
+  IconDevicesCog,
+  IconCamera,
+  IconBrandSupernova,
+  IconIcons,
+  IconCube,
+} from "@tabler/icons-react";
 import styles from "./Header.module.css";
 import { useState, useRef, useEffect } from "react";
 import FeaturedWork from "./FeaturedWork";
@@ -18,7 +33,9 @@ export default function WorkDropdown() {
   }, []);
 
   const openMenu = () => {
-    if (closeTimeout.current) window.clearTimeout(closeTimeout.current);
+    if (closeTimeout.current) {
+      window.clearTimeout(closeTimeout.current);
+    }
     setIsOpen(true);
   };
 
@@ -35,84 +52,97 @@ export default function WorkDropdown() {
       onMouseLeave={closeMenu}
     >
       <span className={styles.dropdownToggle}>
-     <span className="body-semibold">Work</span>
+        <span className="body-semibold">Work</span>
         <IconChevronDown
-          className={`${styles.dropdownIcon} ${isOpen ? styles.rotate : ""
-            }`}
+          className={`${styles.dropdownIcon} ${
+            isOpen ? styles.rotate : ""
+          }`}
         />
       </span>
 
       <div
-        className={`${styles.megaMenu} ${isOpen ? styles.megaMenuActive : ""
-          }`}
+        className={`${styles.megaMenu} ${
+          isOpen ? styles.megaMenuActive : ""
+        }`}
       >
         <div className={styles.megaGrid}>
-          <div>
-            <span className="eyebrow grey-color">Featured Work</span>
+          {/* Featured */}
+          <div className={styles.megaMenuEyebrowContainer}>
+            <span className={styles.megaMenuEyebrow}>Featured Work</span>
             <FeaturedWork />
           </div>
 
-          <div className="flex flex-col gap-2">
-            <span className="eyebrow grey-color">Product Design</span>
+          {/* Product Design */}
+          <div className={styles.FeatureWorkMenuList}>
+            <span className={styles.megaMenuEyebrow}>Product Design</span>
+            <div className={styles.menuListContainer}>
+              <Link href="/" className={styles.menuListItem}>
+                <IconDevices stroke={1.5} />
+                <span className="label">UX Case Studies</span>
+              </Link>
 
-            <div className="flex flex-row gap-2 margin-top-sm items-center highlight-color cursor-pointer">
-              <IconDevices stroke={1.5} />
-              <span className="label">UX Case Studies</span>
-            </div>
+              <Link href="/" className={styles.menuListItem}>
+                <IconSparkles stroke={1.5} />
+                <span className="label">AI Products</span>
+              </Link>
 
-            <div className="flex flex-row gap-2 margin-top-sm items-center highlight-color cursor-pointer">
-              <IconSparkles stroke={1.5} />
-              <span className="label">AI Products</span>
-            </div>
+              <Link href="/" className={styles.menuListItem}>
+                <IconTableHeart stroke={1.5} />
+                <span className="label">UI Concepts</span>
+              </Link>
 
-            <div className="flex flex-row gap-2 margin-top-sm items-center highlight-color cursor-pointer">
-              <IconTableHeart stroke={1.5} />
-              <span className="label">UI Concepts</span>
-            </div>
+              <Link href="/" className={styles.menuListItem}>
+                <IconCategory2 stroke={1.5} />
+                <span className="label">Design Systems</span>
+              </Link>
 
-            <div className="flex flex-row gap-2 margin-top-sm items-center highlight-color cursor-pointer">
-              <IconCategory2 stroke={1.5} />
-              <span className="label">Design Systems</span>
-            </div>
+              <Link href="/" className={styles.menuListItem}>
+                <IconDeviceImac stroke={1.5} />
+                <span className="label">Landing Pages</span>
+              </Link>
 
-            <div className="flex flex-row gap-2 margin-top-sm items-center highlight-color cursor-pointer">
-              <IconDeviceImac stroke={1.5} />
-              <span className="label">Landing Page Designs</span>
-            </div>
+              <Link href="/" className={styles.menuListItem}>
+                <IconTool stroke={1.5} />
+                <span className="label">SaaS</span>
+              </Link>
 
-            <div className="flex flex-row gap-2 margin-top-sm items-center highlight-color cursor-pointer">
-              <IconDeviceMobileCode stroke={1.5} />
-              <span className="label">Apps</span>
-            </div>
+              <Link href="/" className={styles.menuListItem}>
+                <IconDeviceMobileCode stroke={1.5} />
+                <span className="label">Apps</span>
+              </Link>
 
-            <div className="flex flex-row gap-2 margin-top-sm items-center highlight-color cursor-pointer">
-              <IconCode stroke={1.5} />
-              <span className="label">Tools</span>
+              <Link href="/" className={styles.menuListItem}>
+                <IconDevicesCog stroke={1.5} />
+                <span className="label">Tools</span>
+              </Link>
             </div>
           </div>
 
-          <div className="flex flex-col gap-2">
-            <span className="eyebrow grey-color">Beyond Interfaces</span>
+          {/* Beyond Interfaces */}
+          <div className={styles.FeatureWorkMenuList}>
+            <span className={styles.megaMenuEyebrow}>Beyond Interfaces</span>
+            <div className={styles.menuListContainer}>
+              <Link href="/" className={styles.menuListItem}>
+                <IconBrandSupernova stroke={1.5} />
+                <span className="label">Illustrations</span>
+              </Link>
 
-            <div className="flex flex-row gap-2 margin-top-sm items-center highlight-color cursor-pointer">
-              < IconBrandSupernova stroke={1.5} />
-              <span className="label">Illustrations</span>
+              <Link href="/" className={styles.menuListItem}>
+                <IconIcons stroke={1.5} />
+                <span className="label">Branding</span>
+              </Link>
+
+              <Link href="/" className={styles.menuListItem}>
+                <IconCube stroke={1.5} />
+                <span className="label">3D Models</span>
+              </Link>
+
+              <Link href="/" className={styles.menuListItem}>
+                <IconCamera stroke={1.5} />
+                <span className="label">Photography</span>
+              </Link>
             </div>
-
-            <div className="flex flex-row gap-2 margin-top-sm items-center highlight-color cursor-pointer">
-              <IconIcons stroke={1.5} />
-              <span className="label">Branding</span>
-            </div>
-
-            <div className="flex flex-row gap-2 margin-top-sm items-center highlight-color cursor-pointer">
-              <IconCube stroke={1.5} />
-              <span className="label">3D Models</span>
-            </div>
-
-
           </div>
-
-
         </div>
       </div>
     </div>

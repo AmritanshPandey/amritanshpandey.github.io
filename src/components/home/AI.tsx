@@ -1,50 +1,64 @@
-import React from 'react'
-import SectionTitle from '../global/SectionTitle/SectionTitle'
-import ImageCard from '../global/Cards/ImageCard'
+import SectionTitle from "../global/SectionTitle/SectionTitle";
+import ImageCard from "../global/Cards/ImageCard";
+import styles from "./Home.module.css";
+
+const AI_WEB_TOOLS = [
+    {
+        id: 1,
+        eyebrow: "AI Tool",
+        meta: "Web · SaaS",
+        description: "AI-powered workflow tool for content, insights, and automation.",
+        imageSrc: "/assets/images/bento1.png",
+        imageAlt: "AI workflow product UI",
+        chips: ["AI", "SaaS", "Product"],
+    },
+    {
+        id: 2,
+        eyebrow: "Mobile App",
+        meta: "iOS · Android",
+        description: "Cross-platform fitness app focused on habit-building and clarity.",
+        imageSrc: "/assets/images/bento2.png",
+        imageAlt: "Fitness app interface",
+        chips: ["Flutter", "Mobile", "UX"],
+    },
+    {
+        id: 3,
+        eyebrow: "Web Platform",
+        meta: "Next.js · Front-end",
+        description: "High-performance marketing website with strong accessibility foundations.",
+        imageSrc: "/assets/images/bento3.png",
+        imageAlt: "Web platform homepage",
+        chips: ["Web", "Frontend", "Accessibility"],
+    },
+
+];
 
 function AI() {
     return (
-        <section className="ai padding-page primary-background">
-            <SectionTitle title="AI & Web Tools"
+        <section className="surface">
+            <SectionTitle
+                title="Live Projects"
                 actionLabel="Explore All"
-                actionHref="/work/case-studies" />
+                actionHref="/work/case-studies"
+            />
 
-            <div className="work-grid margin-top-lg">
-                <ImageCard
-                    title="AI Web Tools"
-                    description="A UX case study focused on solving user problems through design & dev"
-                    image="/assets/images/card1.png"
-                    href="/work/case-studies"
-                />
-
-                <ImageCard
-                    title="AI Web Tools"
-                    description="A UX case study focused on solving user problems through design & dev"
-                    image="/assets/images/card1.png"
-                    href="/work/case-studies"
-                />
-
-
-                <ImageCard
-                    title="AI Web Tools"
-                    description="A UX case study focused on solving user problems through design & dev"
-                    image="/assets/images/card1.png"
-                    href="/work/case-studies"
-                />
-
-
-                <ImageCard
-                    title="AI Web Tools"
-                    description="A UX case study focused on solving user problems through design & dev"
-                    image="/assets/images/card1.png"
-                    href="/work/case-studies"
-                />
-
-
-
-            </div>
+            <article className={styles.aiWebTools}>
+                <div className={styles.aiCardGrid}>
+                    {AI_WEB_TOOLS.map((item) => (
+                        <ImageCard
+                            key={item.id}
+                            eyebrow={item.eyebrow}
+                            meta={item.meta}
+                            description={item.description}
+                            imageSrc={item.imageSrc}
+                            imageAlt={item.imageAlt}
+                            chips={item.chips}
+                        />
+                    ))}
+                </div>
+            </article>
         </section>
-    )
+    );
 }
 
-export default AI
+export default AI;

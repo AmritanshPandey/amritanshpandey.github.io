@@ -4,12 +4,12 @@ Grid
 
 .bentoGrid {
     display: grid;
-    gap: 24px;
+    gap: var(--gap-24);
 }
 
 .bentoRow {
     display: grid;
-    gap: 24px;
+    gap: var(--gap-24);
 }
 
 /* =========================
@@ -25,7 +25,7 @@ Bento Card
     background-position: center;
     background-repeat: no-repeat;
 
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+    cursor: pointer;
 }
 
 .bentoCard::before {
@@ -42,6 +42,10 @@ Bento Card
     transition: transform 0.6s ease;
 
     z-index: 0;
+}
+
+.bentoCard:hover::before {
+    transform: scale(1.08);
 }
 
 /* Variant = HEIGHT control (not ratio) */
@@ -102,12 +106,12 @@ Responsive (Mobile)
 @media (max-width: 374px) {
     .bentoRow {
         grid-template-columns: 1fr !important;
-        gap: 16px;
+        gap: var(--gap-24);
     }
 
     .bentoGrid {
         display: grid;
-        gap: 16px;
+        gap: var(--gap-24);
     }
 
     .large {
@@ -123,12 +127,12 @@ Responsive (Mobile)
 @media (min-width: 375px) and (max-width: 413px) {
     .bentoRow {
         grid-template-columns: 1fr !important;
-        gap: 16px;
+        gap: var(--gap-24);
     }
 
     .bentoGrid {
         display: grid;
-        gap: 16px;
+        gap: var(--gap-24);
     }
 
     .large {
@@ -144,12 +148,12 @@ Responsive (Mobile)
 @media (min-width: 414px) and (max-width: 480px) {
     .bentoRow {
         grid-template-columns: 1fr !important;
-        gap: 16px;
+        gap: var(--gap-24);
     }
 
     .bentoGrid {
         display: grid;
-        gap: 16px;
+        gap: var(--gap-24);
     }
 
     .large {
@@ -165,7 +169,7 @@ Responsive (Mobile)
 @media (min-width: 768px) and (max-width: 1024px) {
 
     .bentoGrid {
-        gap: 16px;
+        gap: var(--gap-24);
     }
 
     .bentoRow {
@@ -183,8 +187,8 @@ Responsive (Mobile)
 @media (min-width: 834px) and (max-width: 1194px) {
 
     .bentoGrid {
-        gap: 16px;
         grid-template-columns: 1fr;
+        gap: var(--gap-24);
     }
 
     .bentoRow {
@@ -204,7 +208,7 @@ Responsive (Mobile)
 @media (min-width: 1024px) and (max-width: 1366px) {
 
     .bentoGrid {
-        gap: 16px;
+        gap: var(--gap-24);
     }
 
     .bentoRow {

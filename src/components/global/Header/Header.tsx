@@ -1,18 +1,30 @@
 import Link from "next/link";
 import styles from "./Header.module.css";
 import WorkDropdown from "./WorkDropdown";
-import { IconMenu2, IconX } from "@tabler/icons-react";
-import { useState } from "react";
+import { IconMenu2 } from "@tabler/icons-react";
+import { useState, useEffect } from "react";
 import MobileMenu from "./MobileMenu";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 12);
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <>
-      <header className={styles.header}>
+      <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
         <button
-          className={styles.hamburgerMenu}
+          className={`${styles.hamburgerMenu} ${
+            scrolled ? styles.scrolled : ""
+          }`}
           onClick={() => setMobileOpen(true)}
           aria-label="Open menu"
         >
@@ -31,9 +43,7 @@ export default function Header() {
         </nav>
       </header>
 
-      {mobileOpen && (
-        <MobileMenu onClose={() => setMobileOpen(false)} />
-      )}
+      {mobileOpen && <MobileMenu onClose={() => setMobileOpen(false)} />}
     </>
   );
 }

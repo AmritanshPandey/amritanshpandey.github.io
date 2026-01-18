@@ -32,11 +32,24 @@
 
 }
 
-/* After scroll */
-.scrolled {
-  background: rgba(255, 255, 255, 0.415);
-  border: 1px solid rgba(255, 255, 255, 0.349);
+/* Desktop header */
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(24px);
+}
 
+/* Mobile hamburger */
+.hamburgerMenu.scrolled {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile close button */
+.mobileClose.scrolled {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .hamburgerMenu {
@@ -99,12 +112,16 @@
   color: var(--hover-text);
 }
 
+.featuredWorkCard {
+display: flex;
+}
+
 .featuredWorkContainer {
   margin-top: var(--margin-top-md);
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  justify-content: flex-start;
+  gap: var(--gap-16);
+  color: var(--primary-text);
 }
 
 .megaMenu {
@@ -159,8 +176,63 @@
 
 .megaFeatureDesc {
   margin: 6px 0 0 0;
-  color: var(--muted-text, #777);
-  font-size: 14px;
+  color: var(--secondary-text);
+  font-size: var(--font-size-sm);
+}
+
+.megaMenuEyebrowContainer {
+  text-align: left;
+}
+.megaMenuEyebrow {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(  --tertiary-text);
+}
+
+
+.featuredWorkCard {
+  display: flex;
+  gap: var(--gap-12);
+  align-items: flex-start;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.featuredWorkCard:hover {
+  color: var(--primary-color);
+}
+
+.featuredThumb {
+  flex-shrink: 0;
+    border-radius: var( --border-radius-sm);
+}
+
+.featuredText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.menuListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-16);
+  margin-top: var(--margin-top-md);
+}
+
+.menuListItem {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap-8);
+  color: var(--primary-text);
+  cursor: pointer;
+}
+
+.menuListItem:hover {
+    color: var(--primary-color);
 }
 
 
@@ -198,18 +270,12 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
   }
 
-  .scrolled {
-    background: none;
-    border: none;
-
-  }
-
   .mobileNav {
     position: fixed;
     inset: 0;
     z-index: 200;
 
-    background: rgba(255, 255, 255, 0.35);
+    background: var(--surface);
     backdrop-filter: blur(60px);
 
     display: flex;

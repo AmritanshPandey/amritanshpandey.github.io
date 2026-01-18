@@ -53,8 +53,9 @@ img {
 ========================================================================== */
 
     --primary-color: #DD5B00;
-    --primary-accent-color: #EFA45A;
+    --primary-accent-color: #b14a00;
     --secondary-accent-color: #F7DFA3;
+    --tertiary-accent-color: #ff7716;
 
     --white: #FFFEF9;
     --black: #141414;
@@ -164,7 +165,8 @@ Spacing & Radius
     --padding-xxl: 56px;
     --padding-xxxl: 72px;
     --padding-xxxxl: 128px;
-    --padding-page: 56px 200px;
+    --padding-page: 0px 200px 72px;
+    --padding-container: 56px 200px;
 
     --padding-top-xs: 8px;
     --padding-top-sm: 12px;
@@ -205,6 +207,7 @@ Spacing & Radius
     --border-radius-md: 16px;
     --border-radius-lg: 20px;
     --border-radius-xl: 32px;
+    --border-radius-round: 999px;
 
 
 
@@ -261,97 +264,17 @@ Spacing & Radius
 
 
 /* Responsive Typography and Layout */
-
-
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     :root {
-        /* ==========================================================================
-Spacing & Radius
-========================================================================== */
-
-        /* Spacing Variables */
-        --spacing-xs: 8px;
-        --spacing-sm: 12px;
-        --spacing-md: 16px;
-        --spacing-lg: 24px;
-        --spacing-xl: 32px;
-        --spacing-xxl: 56px;
-        --spacing-xxxl: 72px;
-        --spacing-xxxxl: 128px;
-
-        /*Margin*/
-        --margin-xs: 8px;
-        --margin-sm: 12px;
-        --margin-md: 16px;
-        --margin-lg: 24px;
-        --margin-xl: 32px;
-        --margin-xxl: 56px;
-        --margin-xxxl: 72px;
-        --margin-xxxxl: 128px;
-        --margin-page: 200px;
-
-        /*Padding*/
-        --padding-xs: 8px;
-        --padding-sm: 12px;
-        --padding-md: 16px;
-        --padding-lg: 24px;
-        --padding-xl: 32px;
-        --padding-xxl: 56px;
-        --padding-xxxl: 72px;
-        --padding-xxxxl: 128px;
-        --padding-page: 56px 200px;
-
-
-
+        --margin-page: 24px;
+        --padding-page: 0px 24px 32px;
     }
-
-
-
-
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1366px) {
     :root {
-        /* ==========================================================================
-Spacing & Radius
-========================================================================== */
 
-        /* Spacing Variables */
-        --spacing-xs: 8px;
-        --spacing-sm: 12px;
-        --spacing-md: 16px;
-        --spacing-lg: 24px;
-        --spacing-xl: 32px;
-        --spacing-xxl: 56px;
-        --spacing-xxxl: 72px;
-        --spacing-xxxxl: 128px;
-
-        /*Margin*/
-        --margin-xs: 8px;
-        --margin-sm: 12px;
-        --margin-md: 16px;
-        --margin-lg: 24px;
-        --margin-xl: 32px;
-        --margin-xxl: 56px;
-        --margin-xxxl: 72px;
-        --margin-xxxxl: 128px;
-        --margin-page: 200px;
-
-
-        /*Padding*/
-        --padding-xs: 8px;
-        --padding-sm: 12px;
-        --padding-md: 16px;
-        --padding-lg: 24px;
-        --padding-xl: 32px;
-        --padding-xxl: 56px;
-        --padding-xxxl: 72px;
-        --padding-xxxxl: 128px;
-        --padding-page: 56px 200px;
-
-
+        --margin-page: 72px;
+        --padding-page: 0px 72px 56px;
     }
-
-
-
 }

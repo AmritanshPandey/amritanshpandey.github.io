@@ -1,0 +1,155 @@
+/* =========================
+Layout
+========================= */
+
+.caseStudy {}
+
+/* =========================
+Case Study Typography
+========================= */
+
+.caseStudyDisplay {
+    font-size: var(--font-size-xxl);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-snug);
+}
+
+.caseStudyEyebrow {
+    font-size: var(--font-size-sm);
+    font-weight: var(--fw-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+}
+
+.caseStudyHeading {}
+
+.caseStudySubheading {}
+
+.caseStudyBody {}
+
+.caseStudyBodyBold {}
+
+.caseStudyIconText {}
+
+/* =========================
+Hero / Intro
+========================= */
+.caseStudyImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.caseStudyIntro {
+    background: var(--surface);
+    padding: var(--padding-container);
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.caseStudyTitle {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-8);
+}
+
+
+.caseStudyOverview {}
+
+.caseStudyOverviewItemList {}
+
+.caseStudyOverviewItem {}
+
+.caseStudyOverviewTitle {}
+
+.caseStudyOverviewContent {}
+
+.caseStudyIntroduction {}
+
+.caseStudyBody {}
+
+/* =========================
+Project Info
+========================= */
+
+.caseStudyProjectInfo {}
+
+.caseStudyGoal {}
+
+.caseStudyDesignProcess {}
+
+.caseStudyWorkFlow {}
+
+/* =========================
+Research
+========================= */
+
+.caseStudyResearch {}
+
+.caseStudyFoundational {}
+
+.caseStudyCompetitive {}
+
+.caseStudyUserSurvey {}
+
+.caseStudyUserInterview {}
+
+.caseStudyUserKeyInsights {}
+
+/* =========================
+Define
+========================= */
+
+.caseStudyDefine {}
+
+.caseStudyEmpathyMapping {}
+
+.caseStudyPersonas {}
+
+.caseStudyJourneyMapping {}
+
+/* =========================
+Ideation
+========================= */
+
+.caseStudyIdeation {}
+
+.caseStudyInformationArchitecture {}
+
+.caseStudyWireframing {}
+
+/* =========================
+Design
+========================= */
+
+.caseStudyDesign {}
+
+.caseStudyColor {}
+
+.caseStudyTypography {}
+
+.caseStudyIconography {}
+
+.caseStudyDesignSystem {}
+
+.caseStudyUI {}
+
+/* =========================
+Prototype
+========================= */
+
+.caseStudyPrototype {}
+
+/* =========================
+Usability Testing
+========================= */
+
+.caseStudyUsabilityTesting {}
+
+/* =========================
+Reflection
+========================= */
+
+.caseStudyReflection {}

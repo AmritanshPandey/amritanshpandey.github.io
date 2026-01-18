@@ -28,7 +28,7 @@ const featuredProjects: BentoItem[] = [
 
 export default function FeaturedWork() {
     return (
-        <section className="surface">
+        <section className="surface-secondary">
             <SectionTitle
                 title="Featured Work"
                 actionLabel="Explore All"

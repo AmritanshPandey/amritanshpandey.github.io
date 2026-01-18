@@ -3,43 +3,51 @@
 ================================================= */
 
 .btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--gap-4);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gap-4);
 
-  font-weight: var(--fw-bold);
-  font-size: var(--font-size-base);
+    font-weight: var(--fw-semibold);
+    font-size: var(--font-size-base);
 
-  padding: 12px 24px;
-  border-radius: var(--border-radius-xl);
-  border: none;
+    padding: 12px 24px;
+    border-radius: var(--border-radius-xl);
+    border: none;
 
-  text-decoration: none;
-  cursor: pointer;
+    text-decoration: none;
+    cursor: pointer;
 
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.15s ease;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.15s ease;
+}
+
+.btn--primary,
+.btn--secondary,
+.btn--glass {
+    width: fit-content;
+    max-width: max-content;
+    white-space: nowrap;
 }
 
 .btn svg {
-  pointer-events: none;
-  flex-shrink: 0;
+    pointer-events: none;
+    flex-shrink: 0;
 }
 
 .btn:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px var(--primary-accent-color);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-accent-color);
 }
 
 /* Disabled */
 .btn:disabled,
 .btn[aria-disabled="true"] {
-  opacity: 0.6;
-  cursor: not-allowed;
-  pointer-events: none;
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 /* =================================================
@@ -47,12 +55,12 @@
 ================================================= */
 
 .btn--md {
-  padding: 12px 24px;
+    padding: 12px 24px;
 }
 
 .btn--lg {
-  padding: 16px 32px;
-  font-size: var(--font-size-lg);
+    padding: 16px 32px;
+    font-size: var(--font-size-lg);
 }
 
 /* =================================================
@@ -60,61 +68,56 @@
 ================================================= */
 
 .btn--primary {
-  background-color: var(--primary-color);
-  color: var(--white);
-  box-shadow: var(--shadow-md);
+    background-color: var(--primary-color);
+    color: var(--white);
 }
 
 .btn--primary:hover {
-  background-color: var(--primary-accent-color);
+    background-color: var(--primary-accent-color);
 }
 
 .btn--secondary {
-  background-color: transparent;
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color);
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
 }
 
 .btn--secondary:hover {
-  background-color: var(--secondary-accent-color);
+    background-color: var(--secondary-accent-color);
 }
 
 .btn--tertiary {
-  background: none;
-  padding: 0;
-  border-radius: 0;
-  box-shadow: none;
-  color: var(--primary-color);
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    color: var(--primary-color);
 }
 
 .btn--tertiary:hover {
-  color: var(--primary-accent-color);
+    color: var(--primary-accent-color);
 }
 
 .btn--glass {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(12px);
-  color: var(--primary-text);
-  box-shadow: var(--shadow-sm);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    color: var(--primary-text);
+    box-shadow: var(--shadow-sm);
 }
 
 .btn--glass:hover {
-  background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .btn--icon {
-  width: 48px;
-  height: 48px;
-  padding: 0;
-  justify-content: center;
-  border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
 
-  background-color: var(--surface-light);
-  color: var(--primary-color);
-}
-
-.btn--icon:hover {
-  background-color: var(--secondary-accent-color);
+    background-color: var(--primary-color);
+    color: var(--inverted-text);
 }
 
 /* =================================================
@@ -122,5 +125,5 @@
 ================================================= */
 
 .btn:hover {
-  transform: translateY(-1px);
+    transform: translateY(-1px);
 }

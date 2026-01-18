@@ -23,7 +23,7 @@
     --font-size-base: 16px;
     --font-size-md: 20px;
     --font-size-lg: 24px;
-    --font-size-xl: 32px;
+    --font-size-xl: 36px;
     --font-size-xxl: 40px;
     --font-size-xxxl: 48px;
     --font-size-xxxxl: 56px;
@@ -75,6 +75,7 @@
     font-weight: var(--fw-medium);
     line-height: var(--lh-normal);
     text-transform: uppercase;
+     letter-spacing: 0.04em;
 }
 
 .eyebrow-heading {
@@ -82,6 +83,7 @@
     font-weight: var(--fw-semibold);
     line-height: var(--lh-normal);
     text-transform: uppercase;
+     letter-spacing: 0.04em;
 }
 
 .body {

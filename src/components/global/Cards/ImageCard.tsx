@@ -1,34 +1,51 @@
+import Image from "next/image";
+import Chip from "../Chips/Chip";
+import styles from "./ImageCard.module.css";
 
 interface ImageCardProps {
-    title: string;
+    eyebrow?: string;
+    meta?: string;
     description?: string;
-    image: string;
-    href?: string;
+    chips?: string[];
+    imageSrc: string;
+    imageAlt?: string;
 }
 
-function ImageCard({ title, description, image, href }: ImageCardProps) {
-    const CardWrapper = href ? "a" : "div";
-
+export default function ImageCard({
+    eyebrow,
+    meta,
+    description,
+    chips = [],
+    imageSrc,
+    imageAlt = "",
+}: ImageCardProps) {
     return (
-        <section className="image-card card border-radius-lg overflow-hidden">
-            <CardWrapper href={href} className="block">
-                <div className="img-frame aspect-1-1">
-                    <img
-                        src={image}
-                        alt={title}
-                        className="img-fluid rounded-lg overflow-hidden"
-                    />
-                </div>
+        <div className={styles.card}>
+            <div className={styles.media}>
+                <Image
+                    src={imageSrc}
+                    alt={imageAlt}
+                    fill
+                    className={styles.mediaImage}
+                />
+            </div>
 
-                <div className="image-card-content flex flex-col gap-2 margin-top-sm margin-bottom-sm">
-                    <span className="h3">{title}</span>
-                    {description && (
-                        <span className="body">{description}</span>
-                    )}
-                </div>
-            </CardWrapper>
-        </section>
+            <div className={styles.meta}>
+                {eyebrow && <span className={styles.eyebrow}>{eyebrow}</span>}
+                {meta && <span className={styles.metaText}>{meta}</span>}
+
+                {description && (
+                    <p className={styles.description}>{description}</p>
+                )}
+
+                {chips.length > 0 && (
+                    <div className={styles.chips}>
+                        {chips.map((chip) => (
+                            <Chip key={chip} label={chip} />
+                        ))}
+                    </div>
+                )}
+            </div>
+        </div>
     );
 }
-
-export default ImageCard;
